@@ -26,6 +26,9 @@ function Singlet()
         fi
 
         echo "Head: ${Dictionary[0]} Tail: ${Dictionary[1]}"
+	
+	Dict2=($(echo ${Dictionary[@]} | tr " " "\n" | sort -n))
+	echo "In Shorted Order : ${Dict2[@]}"
 }
 function Doublet()
 {
@@ -56,6 +59,9 @@ function Doublet()
         fi
 
         echo "HH: ${Dictionary[0]} TT: ${Dictionary[1]}  HT : ${Dictionary[2]}   TH : ${Dictionary[3]}"
+	Dict2=($(echo ${Dictionary[@]} | tr " " "\n" | sort -n))
+        echo "In Shorted Order : ${Dict2[@]}"
+
 
 }
 function Triplet()
@@ -102,6 +108,8 @@ num=$1
                 echo "HTH = $HTH %"
 
         fi
+	Dict2=($(echo ${Dictionary[@]} | tr " " "\n" | sort -n))
+        echo "In Shorted Order : ${Dict2[@]}"
 
 
 }
